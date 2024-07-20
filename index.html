@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Namaste React V2</title>
+  </head>
+  <body>
+    <!-- Namaste React from Pure HTML -->
+    <!-- <div id="root">
+      <h1>Namaste React from Pure HTML</h1>
+    </div> -->
+
+    <!-- Namaste React using JavaScript -->
+    <!-- <div id="root"></div>
+    <script>
+      const heading = document.createElement("h1");
+      heading.innerHTML = "Hello World from JavaScript!!";
+
+      const root = document.getElementById("root");
+      root.appendChild(heading);
+    </script> -->
+
+    <div id="root"></div>
+    <!-- Below script tag is core link to give us react library for development -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <!-- Below script tag is bridge to browser DOM -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script src="./App.js"></script>
+  </body>
+</html>
