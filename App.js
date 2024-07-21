@@ -1,3 +1,7 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+
 // Hello world from react
 // {} is the place where you give attributes to your tags
 
