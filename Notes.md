@@ -40,6 +40,16 @@
 # CDN links are not a preferred way to bring React and React DOM into our application
     1. If we use CDN links, We need to make an external call to use that link every time
     2. Suppose if new version of react comes in, we need to update that version number in CDN links everytime
+# JSX - JavaScript syntax or HTML like syntax
+# JSX when runs will convert to React.createElement => JS object => HTML element
+# JS engine understands ECMA script
+# Babel - Transpiles the code which JS engine or browser understands
+# React Components
+    1. Class Based components
+    2. Functional Components - Normal JS function which returns JSX
+# component composition - calling one component into another component
+
+
 
 
 # Home work
@@ -56,3 +66,8 @@
 9. What are Transitive dependencies?
 10. Diff between NPM and NPX?
 11. What is HMR?
+12. Diff between HTML and JSX?
+13. What is Babel?
+14. What is React component?
+15. What is component composition?
+16. What is cross site scripting? - JSX takes care of injection attacks - Prevents attacks

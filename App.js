@@ -25,7 +25,7 @@ import ReactDOM from 'react-dom/client';
  *     </div>
  * </div>
  *
- * ReactElement is finally an Object and while it is renderingonto the DOM it converts as HTML which browser understands
+ * ReactElement is finally an Object and while it is rendering onto the DOM it converts as HTML which browser understands
  *
  */
 
