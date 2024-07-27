@@ -1,0 +1,55 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Header from "./components/Header";
+import Body from "./components/Body";
+
+// Hello world from react
+// {} is the place where you give attributes to your tags
+
+// const heading = React.createElement(
+//   "h1",
+//   { id: "heading", xyz: "abc" },
+//   "Hello world from React!!"
+// );
+
+// Example
+/**
+ *
+ * <div id="parent">
+ *     <div id="child">
+ *         <h1>I am an h1 tag</h1>
+ *         <h2>I am an h2 tag</h2>
+ *     </div>
+ *     <div id="child">
+ *         <h1>I am an h1 tag</h1>
+ *         <h2>I am an h2 tag</h2>
+ *     </div>
+ * </div>
+ *
+ * ReactElement is finally an Object and while it is rendering onto the DOM it converts as HTML which browser understands
+ *
+ */
+
+// const heading = React.createElement("div", { id: "parent" }, [
+//   React.createElement("div", { id: "child" }, [
+//     React.createElement("h1", {}, "I am an h1 tag"),
+//     React.createElement("h2", {}, "I am an h2 tag"),
+//   ]),
+//   React.createElement("div", { id: "child2" }, [
+//     React.createElement("h1", {}, "I am an h1 tag"),
+//     React.createElement("h2", {}, "I am an h2 tag"),
+//   ]),
+// ]);
+
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<AppLayout />);

@@ -22,6 +22,7 @@
     git remote add origin https://github.com/naveen0928/namaste-react-v2.git
     git push -u origin main -->
 
+# Why React? - makes developer experience very easy - less code and more on web page
 # Order of files in index.html matters a lot
 # Props are the children and attributes attached to it
 # Library can be applied to a small portion of page itself like Header only
@@ -48,6 +49,22 @@
     1. Class Based components
     2. Functional Components - Normal JS function which returns JSX
 # component composition - calling one component into another component
+# props - Just normal arguments to a function
+# Config driven UI - Website is driven by configs or data --> Controlling UI using data
+# Use of key in loops = If we dont have key given to elements in an array, then React does bnot know which one to re-render and it will end up in re-rendering all the elements which is not a good optimisation technique. So we give key to say React that all the old elements were already there previously(not needed for re-rendering) and the newly added elements will be re-rendered which is the best optimisation technique
+# React itself says using index as key is not recommended
+# In MAP - not using key (not acceptable) <<< index as key <<<<<< id as key (best practice)
+# There are 2 types of Exports and Imports -
+    1. Named
+    2. Default
+# *** React is fast in DOM manipulation - UI and data layers in sync
+# React Hooks - Normal JS utility functions by Facebook developers
+    1. UseState()- gives state variables
+    2. UseEffect()
+# Whenever state variable changes, react will rerender my component
+# Actual DOM is basically HTML tags , Virtual DOM is representation of actual DOM
+# Virtaul DOM is normal JS object
+# when we re-render, it finds the diff between two virtual DOMS and then updates the actual DOM
 
 
 
@@ -71,3 +88,10 @@
 14. What is React component?
 15. What is component composition?
 16. What is cross site scripting? - JSX takes care of injection attacks - Prevents attacks
+17. Optional chaining?
+18. Can you do Named export along with default export?
+19. What is Diff algorithm?
+20. What is reconciliation algorithm or React filber? - React fiber is in React 16
+21. What is monolith and microservice architecture?
+22. What is seperation of concern and single responsibility principle?
+23. What is optional chaining?
