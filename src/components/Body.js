@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import { FETCH_RESTAURANTS_LIST } from "../utils/Constants";
+import FakeLoader from "./fakeLoader";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
+  const [filteredList, setFilteredList] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -15,11 +18,34 @@ const Body = () => {
     setResList(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    setFilteredList(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
-  return (
+  return resList.length === 0 ? (
+    <FakeLoader />
+  ) : (
     <div>
-      <div>
+      <div className="search-container">
+        <div className="search">
+          <input
+            type="text"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+          <button
+            onClick={() => {
+              setFilteredList(
+                resList.filter((res) =>
+                  res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                )
+              );
+            }}
+          >
+            search
+          </button>
+        </div>
         <button
           className="top-rated-btn"
           onClick={() => {
@@ -30,7 +56,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {resList.map((item) => (
+        {filteredList.map((item) => (
           <RestaurantCard key={item.info.id} resCard={item.info} />
         ))}
       </div>

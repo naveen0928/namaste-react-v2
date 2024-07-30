@@ -59,14 +59,26 @@
     2. Default
 # *** React is fast in DOM manipulation - UI and data layers in sync
 # React Hooks - Normal JS utility functions by Facebook developers
-    1. UseState()- gives state variables
+    1. UseState()- gives state variables.
+        1. Dont use useState in if/else, for loops, functions
+        2. Dont write useState() outside functional component
     2. UseEffect()
-# Whenever state variable changes, react will rerender my component
+# *** Whenever state variable changes, react will rerender my component
 # Actual DOM is basically HTML tags , Virtual DOM is representation of actual DOM
 # Virtaul DOM is normal JS object
 # when we re-render, it finds the diff between two virtual DOMS and then updates the actual DOM
-
-
+# If we need to toogle a button using JS variables, it will not render in UI but it will render in console because React does not know if that JS variable is getting update or not.. But if we use useState, React will trigger render procees once again.. Ex in <Header /> Login toggle
+# useEffect() is called after 
+    1. If no dependency array, it is called everytime when component renders
+    2. If empty dependency array  [], it is called only after initial render and just once
+    3. If something in dependency array [something], useEffect will be called everytime dependency is updated
+# useRouteError() - By react-router-dom - It will have all the errors all will show it in browser
+# Single Page Applications - Only one page and even if i route to the diff component it will change the components but not reloads the entire page
+# There are 2 types of routing in web apps
+    1. Client side routing - No network calls needed, even if we need to display something in UI because when we load the page everything is loaded in the background. We are implementing this
+    2. Server side routing - network call is made for About.js and then server fetches the About.html and then content is displayed on UI
+# Link from react-router-dom will not reload the entire page when we route. Instead, it will interchange the components. 
+# <a> will reload the entire page which leads to performance issue
 
 
 # Home work
@@ -95,3 +107,4 @@
 21. What is monolith and microservice architecture?
 22. What is seperation of concern and single responsibility principle?
 23. What is optional chaining?
+24. What is conditional rendering?
