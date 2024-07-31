@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ErrorElement from "./components/ErrorElement";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 // Hello world from react
 // {} is the place where you give attributes to your tags
@@ -70,6 +71,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/restaurants/:resId",
+        element: <RestaurantMenu />,
       },
     ],
     errorElement: <ErrorElement />,

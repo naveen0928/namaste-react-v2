@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import { FETCH_RESTAURANTS_LIST } from "../utils/Constants";
 import FakeLoader from "./fakeLoader";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
@@ -57,7 +58,9 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredList.map((item) => (
-          <RestaurantCard key={item.info.id} resCard={item.info} />
+          <Link to={"restaurants/" + item.info.id} key={item.info.id}>
+            <RestaurantCard resCard={item.info} />
+          </Link>
         ))}
       </div>
     </div>
