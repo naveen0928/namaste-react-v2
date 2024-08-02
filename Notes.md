@@ -79,6 +79,50 @@
     2. Server side routing - network call is made for About.js and then server fetches the About.html and then content is displayed on UI
 # Link from react-router-dom will not reload the entire page when we route. Instead, it will interchange the components. 
 # <a> will reload the entire page which leads to performance issue
+# Functional component - Normal JS function
+# Class based component - Normal JS class which has render method and that returns JSX
+# Whenever the instance of class component is created, constructor is called and then render() is called
+
+# - Below example is when child is called in parent and grandchild is called in child
+# Parent Constructor
+# Parent render
+#   Child Constructor
+#   Child render
+#       Grand child constructor
+#       Grand child render
+#       Grand Child component Did mount
+#   Child component Did mount
+# Parent component Did mount
+
+# Below example is when child & Grand child is called in parent (when child components are called two diff instances are called)
+# when we call same child class two times with different props, then Parent constructor then render will be called, then because we are calling the same child class react will batch the two instances of the child components and then render phase will be called and then commit phase. Please refer (https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) link.
+# Parent Constructor
+# Parent render
+
+#  <RENDER PHASE BEGINS AS BATCH>
+#   First Child Constructor
+#   First Child render
+#       Second Child Constructor
+#       Second Child render
+#  <RENDER PHASE BEGINS AS BATCH>
+
+#  <COMMIT PHASE BEGINS AS BATCH>
+#   First Child component Did mount
+#       Second Child component Did mount
+#  <COMMIT PHASE ENDS AS BATCH>
+#   
+#  <UPDATING PHASE BEGINS>
+#   First child render
+#   First child component did update
+#       Second child render
+#       Second child component did update
+#  <UPDATING PHASE ENDS>
+
+# Parent component Did mount
+# The above scenario will work like that because as DOM manipulation in react is most expensive, React will take render as a vatch of two components, implememts out the diff algorithm and then it goes to commit phase as commit phase takes some time
+
+# React lifecycle diagram - https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
 
 
 # Home work
@@ -108,3 +152,4 @@
 22. What is seperation of concern and single responsibility principle?
 23. What is optional chaining?
 24. What is conditional rendering?
+25. Why do we need super(props)?
