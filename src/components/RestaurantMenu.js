@@ -1,22 +1,10 @@
-import { useState, useEffect } from "react";
 import FakeLoader from "./fakeLoader";
-import { RESTAURANT_MENU_LIST } from "../utils/Constants";
 import { useParams } from "react-router-dom";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
-
   const { resId } = useParams();
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const data = await fetch(RESTAURANT_MENU_LIST + resId);
-    const json = await data.json();
-    setResInfo(json.data);
-  };
+  const resInfo = useRestaurantMenu(resId);
 
   if (resInfo === null) return <FakeLoader />;
 

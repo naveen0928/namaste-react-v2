@@ -96,6 +96,7 @@
 
 # Below example is when child & Grand child is called in parent (when child components are called two diff instances are called)
 # when we call same child class two times with different props, then Parent constructor then render will be called, then because we are calling the same child class react will batch the two instances of the child components and then render phase will be called and then commit phase. Please refer (https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) link.
+
 # Parent Constructor
 # Parent render
 
@@ -153,3 +154,6 @@
 23. What is optional chaining?
 24. What is conditional rendering?
 25. Why do we need super(props)?
+26. Why cannot we write async in useEffect()?
+27. What is Single Responsibility principle? - We will display logic for UI and rest everything in custom hooks
+28. Chunking, code splitting, Dynamic bundling, Lazy loading, On Demand loading

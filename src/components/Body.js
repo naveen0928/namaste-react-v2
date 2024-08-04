@@ -3,11 +3,13 @@ import RestaurantCard from "./RestaurantCard";
 import { FETCH_RESTAURANTS_LIST } from "../utils/Constants";
 import FakeLoader from "./fakeLoader";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const onlineStatus = useOnlineStatus();
 
   useEffect(() => {
     fetchData();
@@ -23,6 +25,13 @@ const Body = () => {
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  if (onlineStatus === false)
+    return (
+      <h1>
+        Looks like you are offline.. Please check your internet connection.
+      </h1>
+    );
 
   return resList.length === 0 ? (
     <FakeLoader />
