@@ -4,16 +4,16 @@ const RestaurantCard = ({ resCard }) => {
   const { cloudinaryImageId, name, avgRating, sla, cuisines, areaName } =
     resCard;
   return (
-    <div className="card-container">
+    <div className="w-[200px] m-5 p-[2px] cursor-pointer bg-slate-100 hover:bg-gray-200">
       <div className="img-card-container">
         <img
-          className="card-img"
+          className="h-[150px] w-[100%] rounded-sm"
           src={RESTAURANT_CARD_LOGO + cloudinaryImageId}
           alt="card"
         />
       </div>
       <div>
-        <h3>{name}</h3>
+        <h3 className="font-bold text-lg">{name}</h3>
         <h4>{avgRating + " rating"}</h4>
         <h4>{sla.slaString}</h4>
         <h5>{cuisines.join(", ")}</h5>

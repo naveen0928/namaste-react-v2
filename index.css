@@ -1,4 +1,8 @@
-h3 {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* h3 {
   margin: 8px 0;
 }
 
@@ -81,4 +85,4 @@ h5 {
 .class-card {
     padding: 10px;
     border: 1px solid black;
-}
+} */

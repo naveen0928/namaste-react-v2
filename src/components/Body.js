@@ -37,14 +37,16 @@ const Body = () => {
     <FakeLoader />
   ) : (
     <div>
-      <div className="search-container">
-        <div className="search">
+      <div className="flex p-2 m-2">
+        <div className="mx-2">
           <input
+            className="border border-solid border-black"
             type="text"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
           <button
+          className="px-2 py-[2px] m-2 bg-gray-400 items-center rounded-sm"
             onClick={() => {
               setFilteredList(
                 resList.filter((res) =>
@@ -53,11 +55,11 @@ const Body = () => {
               );
             }}
           >
-            search
+            Search
           </button>
         </div>
         <button
-          className="top-rated-btn"
+          className="cursor-pointer bg-green-300 px-2 py-[2px] m-2 rounded-sm"
           onClick={() => {
             setResList(resList.filter((res) => res.info.avgRating > 4.3));
           }}
@@ -65,7 +67,7 @@ const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap rounded-lg">
         {filteredList.map((item) => (
           <Link to={"restaurants/" + item.info.id} key={item.info.id}>
             <RestaurantCard resCard={item.info} />

@@ -157,3 +157,5 @@
 26. Why cannot we write async in useEffect()?
 27. What is Single Responsibility principle? - We will display logic for UI and rest everything in custom hooks
 28. Chunking, code splitting, Dynamic bundling, Lazy loading, On Demand loading
+29. Styled components, sass, scss, material UI, bootstrap, chakra UI, ant design?
+30. Tailwind css is very light. It loads the css which is required
