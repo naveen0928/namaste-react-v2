@@ -123,6 +123,7 @@
 # The above scenario will work like that because as DOM manipulation in react is most expensive, React will take render as a vatch of two components, implememts out the diff algorithm and then it goes to commit phase as commit phase takes some time
 
 # React lifecycle diagram - https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+# HOC - Function which takes a commponent and returns a component
 
 
 
@@ -159,3 +160,4 @@
 28. Chunking, code splitting, Dynamic bundling, Lazy loading, On Demand loading
 29. Styled components, sass, scss, material UI, bootstrap, chakra UI, ant design?
 30. Tailwind css is very light. It loads the css which is required
+31. What is HOC?
