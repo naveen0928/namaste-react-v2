@@ -161,3 +161,5 @@
 29. Styled components, sass, scss, material UI, bootstrap, chakra UI, ant design?
 30. Tailwind css is very light. It loads the css which is required
 31. What is HOC?
+32. Contorlled and uncontrolled components?
+33. Lifting the state up in react?
