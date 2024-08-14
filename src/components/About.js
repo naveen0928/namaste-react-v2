@@ -2,6 +2,7 @@ import React from "react";
 import User from "./User";
 import UserLevelTwo from "./UserLevelTwo";
 import UserFunctional from "./UserFunctional";
+import UserContext from "../utils/UserContext";
 
 class About extends React.Component {
   constructor(props) {
@@ -30,6 +31,11 @@ class About extends React.Component {
     return (
       <div>
         <h1>This is About Us page</h1>
+        <div>
+          <UserContext.Consumer>
+            {({ loggedInUser }) => <h1 className="font-bold">{loggedInUser}</h1>}
+          </UserContext.Consumer>
+        </div>
         {/* <User name="First " location="Vijayawada as Prop" />
         <User name="Second " location="Gollapudi as Prop" />
         <UserLevelTwo /> */}

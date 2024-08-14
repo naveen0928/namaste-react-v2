@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import RestaurantCard, { WithPromotedLabel } from "./RestaurantCard";
 import { FETCH_RESTAURANTS_LIST } from "../utils/Constants";
 import FakeLoader from "./fakeLoader";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
@@ -12,6 +13,8 @@ const Body = () => {
   const onlineStatus = useOnlineStatus();
 
   const WithPromotedRestaurantCard = WithPromotedLabel(RestaurantCard);
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   useEffect(() => {
     fetchData();
@@ -68,6 +71,14 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
+        <div className="mt-2">
+          <label>User name : </label>
+          <input
+            className="border border-black rounded-sm p-1"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
       </div>
       <div className="flex flex-wrap rounded-lg">
         {filteredList.map((item) => (

@@ -124,6 +124,7 @@
 
 # React lifecycle diagram - https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 # HOC - Function which takes a commponent and returns a component
+# If we need to use context hook in class based component, we need to call <UserContext.Consumer>
 
 
 
@@ -163,3 +164,5 @@
 31. What is HOC?
 32. Contorlled and uncontrolled components?
 33. Lifting the state up in react?
+34. Props drilling?
+35. Diff between React context and Redux? Redux is a external library  but react context comes with react
