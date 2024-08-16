@@ -22,6 +22,10 @@
     git remote add origin https://github.com/naveen0928/namaste-react-v2.git
     git push -u origin main -->
 
+# To install redux tookit
+    1. @reduxjs/toolkiy
+    2. react-redux
+
 # Why React? - makes developer experience very easy - less code and more on web page
 # Order of files in index.html matters a lot
 # Props are the children and attributes attached to it
@@ -125,6 +129,13 @@
 # React lifecycle diagram - https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 # HOC - Function which takes a commponent and returns a component
 # If we need to use context hook in class based component, we need to call <UserContext.Consumer>
+# Redux is not mandatory
+# Redux is state management library and easier to debug using redux dev tools
+# Redux store - big object which is kept in a central place
+# How to write data ----> When action is made, dispatches an action -> then function(REDUCER) is called -> then function(REDUCER) will modify the slice of redux store 
+# How to read data ---> component will subscribe to the store using selector -- OR -- we will use selector and this phenomena is called subscribing to the store
+# In the older version of reducer, we cannot mutate the state directly. we need to create a copy first and then we can mutate
+# In redux toolkit, we have to modify the state directly
 
 
 
@@ -166,3 +177,7 @@
 33. Lifting the state up in react?
 34. Props drilling?
 35. Diff between React context and Redux? Redux is a external library  but react context comes with react
+36. Redux, Zustand
+37. Immer - Redux uses Immer BTS
+38. what is proxy object?
+39. RTK query?

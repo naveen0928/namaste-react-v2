@@ -1,6 +1,15 @@
 // import { RESTAURANT_CARD_LOGO } from "../utils/Constants";
 
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
+
 const ItemsList = ({ data }) => {
+  const dispatch = useDispatch();
+
+  const handleAddItem = () => {
+    dispatch(addItem(data));
+  };
+
   return (
     <div>
       {data.map((item) => {
@@ -24,7 +33,10 @@ const ItemsList = ({ data }) => {
                 }
               />
               {item.card.info.imageId && (
-                <button className="absolute p-2 mx-[470px] my-16 bg-black text-white shadow-lg roubded-sm">
+                <button
+                  className="absolute p-2 mx-[470px] my-16 bg-black text-white shadow-lg rounded-sm"
+                  onClick={handleAddItem}
+                >
                   Add
                 </button>
               )}
